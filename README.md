@@ -1,2 +1,2 @@
 # go-play
-my go playground
+Here is my go playground.
