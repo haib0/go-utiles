@@ -1,4 +1,4 @@
-module github.com/hdi0b/go-play
+module github.com/hdi0b/go-play/others
 
 go 1.18
 
