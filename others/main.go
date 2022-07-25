@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/hdi0b/go-play/others/libs"
+	"github.com/haib0/go-utiles/others/libs"
 )
 
 func main() {

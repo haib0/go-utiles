@@ -1,5 +1,10 @@
 go 1.18
 
 use (
+	./easyrobot
+	./justchat
+	./justtalk
+	./listentogether
 	./others
+	./shexer
 )
