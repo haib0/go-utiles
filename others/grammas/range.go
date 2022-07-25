@@ -1,4 +1,4 @@
-package test_grammas
+package grammas
 
 import "fmt"
 
@@ -19,8 +19,7 @@ func rangeMap() {
 }
 
 func rangeArray() {
-	var a []rune
-	a = []rune{'a', 'b', 'c'}
+	var a []rune = []rune{'a', 'b', 'c'}
 	for i, n := range a {
 		fmt.Println(i, string(n))
 	}

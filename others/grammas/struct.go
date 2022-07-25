@@ -1,8 +1,8 @@
-package test_grammas
+package grammas
 
 import "fmt"
 
-func TestStructure()  {
+func TestStructure() {
 	s := NewS()
 	fmt.Println(s)
 }

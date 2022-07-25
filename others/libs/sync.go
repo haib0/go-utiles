@@ -1,4 +1,4 @@
-package test_grammas
+package libs
 
 import (
 	"fmt"
@@ -34,4 +34,3 @@ func JustA() {
 	wg.Wait()
 	fmt.Printf("%v", m)
 }
-

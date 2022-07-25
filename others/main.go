@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	libs.Hello()
+	libs.JustA()
 }

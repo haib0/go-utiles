@@ -1,22 +1,22 @@
-package test_grammas
+package grammas
 
 import "fmt"
 
 type person struct {
 	name string
-	age int
+	age  int
 }
 
-func (p person) funcWithout()  {
+func (p person) funcWithout() {
 	p.age += 1
 	fmt.Println("In func without", p.age)
 }
 
-func (p *person)funcWith()  {
+func (p *person) funcWith() {
 	p.age += 1
 }
 
-func TestPoint()  {
+func TestPoint() {
 	p := person{
 		name: "jone",
 		age:  20,

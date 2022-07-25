@@ -1,4 +1,4 @@
-package libs
+package grammas
 
 import (
 	"fmt"
@@ -19,7 +19,8 @@ func (s *S1) pchange(i int) {
 }
 
 func (s S1) change(i int) {
-	s.Val = i
+	// ineffective assignment to field S1.Val
+	// s.Val = i
 }
 
 func RunSlicePoint() {
