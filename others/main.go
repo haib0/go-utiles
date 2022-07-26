@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/haib0/go-utiles/others/libs"
+	"github.com/haib0/go-utiles/others/grammas"
 )
 
 func main() {
-	libs.JustA()
+	grammas.RunFuncArg()
 }
