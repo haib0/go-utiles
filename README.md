@@ -5,6 +5,6 @@ here is my go playground,
 with some unuseful tools.
 ```
 
-- EasyRobot
-- ListenTogether
-- *sh***exer**
+- [EasyRobot](./easyrobot)
+- [ListenTogether](./listentogether)
+- [*sh***exer**](./shexer)
