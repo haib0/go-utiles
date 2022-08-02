@@ -1,4 +1,4 @@
-module github.com/haib0/go-utiles/others
+module github.com/haib0/go-utiles/play
 
 go 1.18
 

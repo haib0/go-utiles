@@ -1,4 +1,4 @@
-package libs
+package main
 
 import (
 	"container/heap"

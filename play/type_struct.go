@@ -1,4 +1,4 @@
-package grammas
+package main
 
 type FuncA func(x int) int
 

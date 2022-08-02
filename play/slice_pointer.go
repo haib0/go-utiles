@@ -1,4 +1,4 @@
-package grammas
+package main
 
 import (
 	"fmt"
