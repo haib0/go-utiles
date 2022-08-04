@@ -1,5 +1,9 @@
 package main
 
+import "flag"
+
 func main() {
-	RunProxy(10806)
+	port := flag.Int("port", 10806, "port of justproxy")
+	flag.Parse()
+	RunProxy(*port)
 }
