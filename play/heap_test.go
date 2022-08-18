@@ -1,8 +1,9 @@
-package main
+package play
 
 import (
 	"container/heap"
 	"sort"
+	"testing"
 )
 
 type MySlice []int
@@ -23,7 +24,7 @@ func (h *hp) Pop() interface{} {
 	return v
 }
 
-func RunHeap() {
+func TestHeap(t *testing.T) {
 	h := &hp{}
 	heap.Push(h, 0)
 }

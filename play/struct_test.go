@@ -1,10 +1,12 @@
-package main
+package play
 
-import "fmt"
+import (
+	"testing"
+)
 
-func TestStructure() {
+func TestStructure(t *testing.T) {
 	s := NewS()
-	fmt.Println(s)
+	t.Log(s)
 }
 
 type S struct {

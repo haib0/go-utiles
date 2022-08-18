@@ -1,7 +1,7 @@
-package main
+package play
 
 import (
-	"fmt"
+	"testing"
 )
 
 type IntSlice []int
@@ -23,15 +23,15 @@ func (s S1) change(i int) {
 	// s.Val = i
 }
 
-func RunSlicePoint() {
+func TestSlicePoint(t *testing.T) {
 	intSlice := make([]int, 10)
 	IntSlice(intSlice).change(1)
-	fmt.Println(intSlice)
+	t.Log(intSlice)
 
 	s := S1{Val: 1}
-	fmt.Println(s)
+	t.Log(s)
 	s.change(1)
-	fmt.Println(s)
+	t.Log(s)
 	s.pchange(2)
-	fmt.Println(s)
+	t.Log(s)
 }

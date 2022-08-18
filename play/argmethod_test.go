@@ -1,6 +1,8 @@
-package main
+package play
 
-import "fmt"
+import (
+	"testing"
+)
 
 type person struct {
 	name string
@@ -9,20 +11,22 @@ type person struct {
 
 func (p person) funcWithout() {
 	p.age += 1
-	fmt.Println("In func without", p.age)
+	_ = p.age
 }
 
 func (p *person) funcWith() {
-	p.age += 1
+	p.age += 2
 }
 
-func TestPoint() {
+func TestPoint(t *testing.T) {
 	p := person{
 		name: "jone",
 		age:  20,
 	}
+
 	p.funcWithout()
-	fmt.Println("FuncWithout: ", p.age)
+	t.Log("FuncWithout: ", p.age)
+
 	p.funcWith()
-	fmt.Println("FuncWith: ", p.age)
+	t.Log("FuncWith: ", p.age)
 }

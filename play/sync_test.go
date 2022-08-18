@@ -1,8 +1,8 @@
-package main
+package play
 
 import (
-	"fmt"
 	"sync"
+	"testing"
 )
 
 type student struct {
@@ -10,7 +10,7 @@ type student struct {
 	Age  int
 }
 
-func JustA() {
+func TestSync(t *testing.T) {
 	m := make(map[string]*student)
 	students := []*student{
 		{Name: "zhou", Age: 24},
@@ -25,12 +25,12 @@ func JustA() {
 			defer wg.Done()
 			l.Lock()
 			local := stu
-			fmt.Println(local)
+			t.Log(local)
 			m[local.Name] = local
 			l.Unlock()
 		}()
-		fmt.Printf("For Index: %d \n", i)
+		t.Logf("For Index: %d \n", i)
 	}
 	wg.Wait()
-	fmt.Printf("%v", m)
+	t.Logf("%v", m)
 }

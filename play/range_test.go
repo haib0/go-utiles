@@ -1,8 +1,11 @@
-package main
+package play
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestRange() {
+func TestRange(t *testing.T) {
 	rangeMap()
 	rangeArray()
 }

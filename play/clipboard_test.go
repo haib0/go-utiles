@@ -1,15 +1,16 @@
-package main
+package play
 
 import (
 	"context"
+	"testing"
 
 	"golang.design/x/clipboard"
 )
 
-func RunClipboard() {
+func TestClipboard(t *testing.T) {
 	ch := clipboard.Watch(context.TODO(), clipboard.FmtText)
 	for data := range ch {
 		// print out clipboard data whenever it is changed
-		println(string(data))
+		t.Log(string(data))
 	}
 }

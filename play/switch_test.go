@@ -1,6 +1,8 @@
-package main
+package play
 
-import "fmt"
+import (
+	"testing"
+)
 
 type emptyCtx int
 
@@ -20,6 +22,6 @@ var (
 	background = new(emptyCtx)
 )
 
-func RunSwitch() {
-	fmt.Println(todo.string())
+func TestSwitch(t *testing.T) {
+	t.Log(todo.string())
 }

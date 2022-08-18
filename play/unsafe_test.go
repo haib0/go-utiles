@@ -1,7 +1,7 @@
-package main
+package play
 
 import (
-	"fmt"
+	"testing"
 	"unsafe"
 )
 
@@ -25,7 +25,24 @@ The following minimal alignment properties are guaranteed:
 
 A struct or array type has size zero if it contains no fields (or elements, respectively) that have a size greater than zero. Two distinct zero-size variables may have the same address in memory.
 */
-func RunUnsafe() {
+func TestAlignment(t *testing.T) {
+	s1 := struct {
+		a int8
+		b int16
+		c int32
+	}{}
+
+	s2 := struct {
+		a int8
+		c int32
+		b int16
+	}{}
+
+	t.Log(unsafe.Sizeof(s1)) // 8
+	t.Log(unsafe.Sizeof(s2)) // 12
+}
+
+func TestUnsafe(t *testing.T) {
 	s1 := struct {
 		x int
 		y int
@@ -35,20 +52,20 @@ func RunUnsafe() {
 		y int8
 	}{}
 
-	fmt.Println(unsafe.Sizeof(s1)) // 16
-	fmt.Println(unsafe.Sizeof(s2)) // 4, not 3 because of align
+	t.Log(unsafe.Sizeof(s1)) // 16
+	t.Log(unsafe.Sizeof(s2)) // 4, not 3 because of align
 
-	fmt.Println(unsafe.Alignof(s1)) // 8
-	fmt.Println(unsafe.Alignof(s2)) // 2
+	t.Log(unsafe.Alignof(s1)) // 8
+	t.Log(unsafe.Alignof(s2)) // 2
 
-	fmt.Println(unsafe.Offsetof(s1.x)) // 0
-	fmt.Println(unsafe.Offsetof(s1.y)) // 8
-	fmt.Println(unsafe.Offsetof(s2.x)) // 0
-	fmt.Println(unsafe.Offsetof(s2.y)) // 4
+	t.Log(unsafe.Offsetof(s1.x)) // 0
+	t.Log(unsafe.Offsetof(s1.y)) // 8
+	t.Log(unsafe.Offsetof(s2.x)) // 0
+	t.Log(unsafe.Offsetof(s2.y)) // 4
 
-	fmt.Println(unsafe.Sizeof([]struct{}{}))  // 24
-	fmt.Println(unsafe.Alignof([]struct{}{})) // 8
+	t.Log(unsafe.Sizeof([]struct{}{}))  // 24
+	t.Log(unsafe.Alignof([]struct{}{})) // 8
 
-	fmt.Println(unsafe.Sizeof(struct{}{}))  // 0
-	fmt.Println(unsafe.Alignof(struct{}{})) // 1
+	t.Log(unsafe.Sizeof(struct{}{}))  // 0
+	t.Log(unsafe.Alignof(struct{}{})) // 1
 }
