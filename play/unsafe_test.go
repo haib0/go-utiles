@@ -26,20 +26,20 @@ The following minimal alignment properties are guaranteed:
 A struct or array type has size zero if it contains no fields (or elements, respectively) that have a size greater than zero. Two distinct zero-size variables may have the same address in memory.
 */
 func TestAlignment(t *testing.T) {
-	s1 := struct {
+	t.Log(unsafe.Sizeof(struct {
 		a int8
 		b int16
 		c int32
-	}{}
+	}{})) // 8
 
-	s2 := struct {
+	t.Log(unsafe.Sizeof(struct {
 		a int8
 		c int32
 		b int16
-	}{}
+	}{})) // 12
 
-	t.Log(unsafe.Sizeof(s1)) // 8
-	t.Log(unsafe.Sizeof(s2)) // 12
+	t.Log(unsafe.Sizeof(complex128(1)))  // 16
+	t.Log(unsafe.Alignof(complex128(1))) // 8, max size of alignment is 8
 }
 
 func TestUnsafe(t *testing.T) {
@@ -51,6 +51,7 @@ func TestUnsafe(t *testing.T) {
 		x int16
 		y int8
 	}{}
+	t.Logf("\ns1=%v\ns2=%v\n", s1, s2)
 
 	t.Log(unsafe.Sizeof(s1)) // 16
 	t.Log(unsafe.Sizeof(s2)) // 4, not 3 because of align
