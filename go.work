@@ -9,5 +9,4 @@ use (
 	./listentogether
 	./play
 	./shexer
-	./ylgyproxy
 )
